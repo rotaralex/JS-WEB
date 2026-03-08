@@ -1,6 +1,4 @@
-// 1. Оцінка студента (if)
-
-let grade = 78;   // задана оцінка
+let grade = 78;   
 
 function getGradeIf(score) {
 
@@ -19,9 +17,7 @@ function getGradeIf(score) {
 
 console.log("Оцінка через if:", getGradeIf(grade));
 
-// 2. Оцінка студента (тернарний оператор ?)
-
-let grade2 = 92;  // задана оцінка
+let grade2 = 92;  
 
 let gradeResult = (grade2 >= 90 && grade2 <= 100) ? "Відмінно" :
                   (grade2 >= 75) ? "Добре" :
@@ -31,9 +27,8 @@ let gradeResult = (grade2 >= 90 && grade2 <= 100) ? "Відмінно" :
 
 console.log("Оцінка через ? :", gradeResult);
 
-// 3. Визначення сезону за місяцем
 
-let month = 11;   // заданий місяць (1-12)
+let month = 11;   
 
 function getSeason(monthNumber) {
 

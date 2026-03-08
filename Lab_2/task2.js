@@ -13,8 +13,6 @@ function isInRange(num, min, max) {
 
 console.log(isInRange(number, minValue, maxValue));
 
-// 2. Логічний оператор NOT
-
 let isOnline = true;
 
 console.log("Було:", isOnline);
