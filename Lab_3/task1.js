@@ -1,7 +1,5 @@
 // Завдання 1
-// Цикл while: знайти суму перших 10 чисел Фібоначчі
-
-function zavdannya1() {
+function sumFibonacci() {
   let a = 0;
   let b = 1;
   let suma = 0;
@@ -19,9 +17,7 @@ function zavdannya1() {
 }
 
 // Завдання 2
-// Цикл for: знайти суму всіх простих чисел від 1 до 1000
-
-function zavdannya2() {
+function sumPrimeNumbers() {
   function eProste(n) {
     if (n < 2) return false;
     for (let i = 2; i <= Math.sqrt(n); i++) {
@@ -41,9 +37,7 @@ function zavdannya2() {
 }
 
 // Завдання 3
-// switch: число від 1 до 7 -> день тижня
-
-function zavdannya3(chyslo) {
+function getDayOfWeek(chyslo) {
   let den;
   switch (chyslo) {
     case 1: den = "Понеділок"; break;
@@ -59,9 +53,7 @@ function zavdannya3(chyslo) {
 }
 
 // Завдання 4
-// Функція яка приймає масив рядків і повертає тільки ті що мають непарну довжину
-
-function zavdannya4(arr) {
+function convertarray(arr) {
   let result = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].length % 2 !== 0) {
@@ -73,27 +65,23 @@ function zavdannya4(arr) {
 }
 
 // Завдання 5
-// Стрілкова функція: масив чисел -> кожне число збільшити на 1
-
-const zavdannya5 = (arr) => {
+const incrementArray = (arr) => {
   let result = arr.map(n => n + 1);
   console.log("Завдання 5:", result);
   return result;
 };
 
 // Завдання 6
-// Функція яка повертає true якщо сума або різниця a і b рівна 10
-
-function zavdannya6(a, b) {
+function checkSumOrDiff(a, b) {
   let result = (a + b === 10) || (Math.abs(a - b) === 10);
   console.log("Завдання 6:", result);
   return result;
 }
 
 // виклики функцій
-zavdannya1();
-zavdannya2();
-zavdannya3(3);
-zavdannya4(["hi", "hello", "ok", "world", "JS", "code"]);
-zavdannya5([1, 5, 10, 23, 0]);
-zavdannya6(6, 4);
+sumFibonacci();
+sumPrimeNumbers();
+getDayOfWeek(3);
+convertarray(["hi", "hello", "ok", "world", "JS", "code"]);
+incrementArray([1, 5, 10, 23, 0]);
+checkSumOrDiff(6, 4);
