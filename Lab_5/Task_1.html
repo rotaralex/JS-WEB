@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Завдання 1 – Лампочка (className / classList)</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+ 
+    #bulb {
+      width: 120px;
+      height: 120px;
+      border-radius: 50% 50% 40% 40%;
+      margin: 20px auto;
+      background: #ccc;
+      border: 3px solid #888;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+ 
+    #bulb.on-regular { background: yellow;  box-shadow: 0 0 40px 15px rgba(255,255,0,0.6); }
+    #bulb.on-eco     { background: #90EE90; box-shadow: 0 0 40px 15px rgba(0,200,0,0.5); }
+    #bulb.on-led     { background: #87CEEB; box-shadow: 0 0 40px 15px rgba(0,150,255,0.5); }
+ 
+    select, input[type="range"] { margin: 8px; padding: 4px; font-size: 14px; }
+    button { margin: 6px; padding: 8px 20px; font-size: 15px; cursor: pointer; }
+    #status { margin-top: 10px; font-weight: bold; font-size: 16px; }
+    #timer-info { color: gray; font-size: 14px; margin-top: 6px; }
+    #brightness-block { margin-top: 10px; }
+  </style>
+</head>
+<body>
+ 
+<h2>Лампочка</h2>
+ 
+<label>Тип лампочки:
+  <select id="typeSelect" onchange="changeType()">
+    <option value="regular">Звичайна</option>
+    <option value="eco">Енергозберігаюча</option>
+    <option value="led">Світлодіодна (LED)</option>
+  </select>
+</label>
+ 
+<div id="bulb"></div>
+ 
+<div id="brightness-block" style="display:none;">
+  <label>Яскравість: <span id="brightVal">100</span>%
+    <br>
+    <input type="range" id="brightSlider" min="10" max="100" value="100" oninput="changeBrightness(this.value)">
+  </label>
+</div>
+ 
+<div>
+  <button id="btnOn"  onclick="turnOn()">Увімкнути</button>
+  <button id="btnOff" onclick="turnOff()" disabled>Вимкнути</button>
+</div>
+ 
+<div id="status">Стан: вимкнено</div>
+
+<div id="timer-info"></div>
+ 
+<script src="Task_1.js"></script>
+</body>
+</html>

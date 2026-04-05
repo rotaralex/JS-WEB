@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Завдання 3 – Дата та час</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 700px; margin: 0 auto; }
+    h2   { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
+    input, button { margin: 4px; padding: 6px 12px; font-size: 14px; cursor: pointer; }
+ 
+    /* 1. Цифровий годинник */
+    #clock {
+      font-size: 48px;
+      font-family: monospace;
+      letter-spacing: 4px;
+      margin: 10px 0;
+    }
+    #clock-seconds { color: red; }
+    #clock-seconds.blink { animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+ 
+    /* 2. Зворотний відлік */
+    #countdown-display {
+      font-size: 22px;
+      font-family: monospace;
+      color: darkblue;
+      margin: 8px 0;
+    }
+ 
+    /* 3. Календар */
+    #calendar { margin-top: 10px; }
+    #calendar table { border-collapse: collapse; }
+    #calendar th, #calendar td {
+      width: 40px; height: 36px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+    #calendar th { background: #eee; }
+    #calendar td.today { background: #ffd700; font-weight: bold; border-radius: 4px; }
+ 
+    /* 4. День народження */
+    #birthday-result {
+      font-size: 15px;
+      margin-top: 8px;
+      color: #222;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+ 
+<h1>Завдання 3 – Дата та час</h1>
+ 
+<h2>1. Цифровий годинник</h2>
+<div id="clock">
+  <span id="clock-hm">00:00</span>:<span id="clock-seconds">00</span>
+</div>
+ 
+<h2>2. Таймер зворотного відліку</h2>
+<label>Кінцева дата та час:
+  <input type="datetime-local" id="target-datetime" />
+</label>
+<button onclick="startCountdown()">Запустити</button>
+<button onclick="stopCountdown()">Зупинити</button>
+<div id="countdown-display">—</div>
+ 
+<h2>3. Календар</h2>
+<label>Місяць/рік:
+  <input type="month" id="month-picker" oninput="renderCalendar(this.value)" />
+</label>
+<div id="calendar"></div>
+ 
+<h2>4. День народження</h2>
+<p>Введіть дату народження на календарі вище або:</p>
+<label>Дата народження:
+  <input type="date" id="birthday-input" />
+</label>
+<button onclick="calcBirthday()">Порахувати</button>
+<div id="birthday-result"></div>
+ 
+<script src="Task_3.js"></script>
+</body>
+</html>

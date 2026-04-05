@@ -2,7 +2,7 @@
 function sortAndSearchFruitsArray() {
   const fruits = ["яблуко", "банан", "вишня", "груша", "манго"];
  
-  fruits.pop();
+  /*fruits.pop();
   console.log("Завдання 1.1 — Після видалення останнього елемента:", fruits);
  
   fruits.unshift("ананас");
@@ -12,6 +12,7 @@ function sortAndSearchFruitsArray() {
  
   const index = fruits.indexOf("яблуко");
   console.log("Завдання 1.4 — Індекс елемента 'яблуко':", index);
+*/
 }
  
 //Task 2

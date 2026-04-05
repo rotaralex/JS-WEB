@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Завдання 2 – Світлофор</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+ 
+    #traffic-light {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #222;
+      padding: 20px 16px;
+      border-radius: 14px;
+      border: 3px solid #444;
+      margin: 20px auto;
+    }
+ 
+    .light {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #555;
+      border: 2px solid #333;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+ 
+    #light-red.active    { background: red;    box-shadow: 0 0 30px 8px rgba(255,0,0,0.6); }
+    #light-yellow.active { background: yellow; box-shadow: 0 0 30px 8px rgba(255,255,0,0.6); }
+    #light-green.active  { background: #00dd44; box-shadow: 0 0 30px 8px rgba(0,220,70,0.6); }
+ 
+    #light-yellow.blink { animation: blink 0.5s step-end infinite; }
+    @keyframes blink {
+      0%, 100% { background: yellow; box-shadow: 0 0 30px 8px rgba(255,255,0,0.6); }
+      50%       { background: #555;  box-shadow: none; }
+    }
+ 
+    #state-label { font-size: 20px; font-weight: bold; margin: 10px 0; }
+    #timer-label { font-size: 15px; color: gray; margin-bottom: 14px; }
+ 
+    button { margin: 5px; padding: 8px 18px; font-size: 14px; cursor: pointer; }
+ 
+    table { margin: 16px auto; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid #ccc; padding: 6px 14px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+ 
+<h2>Світлофор</h2>
+ 
+<div id="traffic-light">
+  <div class="light" id="light-red"></div>
+  <div class="light" id="light-yellow"></div>
+  <div class="light" id="light-green"></div>
+</div>
+ 
+<div id="state-label">—</div>
+<div id="timer-label">—</div>
+ 
+<button onclick="manualNext()">⏭ Наступний стан</button>
+
+<button onclick="changeDurations()">⚙ Змінити тривалість</button>
+
+<button id="btnStart" onclick="startTrafficLight()">▶ Старт</button>
+<button id="btnStop"  onclick="stopTrafficLight()" disabled>⏹ Стоп</button>
+ 
+<table>
+  <tr><th>Стан</th><th>Тривалість (сек)</th></tr>
+  <tr><td>🔴 Червоний</td>  <td id="td-red">5</td></tr>
+  <tr><td>🟡 Жовтий</td>    <td id="td-yellow">3</td></tr>
+  <tr><td>🟢 Зелений</td>   <td id="td-green">7</td></tr>
+  <tr><td>🟡 Миготливий</td><td id="td-blink">—</td></tr>
+</table>
+ 
+<script src="Task_2.js"></script>
+</body>
+</html>

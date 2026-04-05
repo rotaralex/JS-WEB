@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Завдання 4 – Інтернет-магазин (Map / Set / WeakMap / WeakSet)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: 0 auto; }
+    h2   { margin-top: 28px; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
+    input, button, select { margin: 4px; padding: 6px 10px; font-size: 14px; }
+    button { cursor: pointer; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; font-size: 14px; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #f0f0f0; }
+    tr:hover td { background: #fafafa; }
+    .msg-ok  { color: green; font-weight: bold; }
+    .msg-err { color: red;   font-weight: bold; }
+    #search-result { margin-top: 8px; font-size: 14px; }
+    #history-list  { font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+ 
+<h1>Завдання 4 – Інтернет-магазин</h1>
+<p>Використовуються: <b>Map</b> (каталог), <b>Set</b> (замовлення), <b>WeakMap</b> (мета продуктів), <b>WeakSet</b> (тегування).</p>
+ 
+<h2>1. Додати продукт</h2>
+<input id="prod-name"  type="text"   placeholder="Назва продукту" />
+<input id="prod-price" type="number" placeholder="Ціна (грн)" min="0" />
+<input id="prod-qty"   type="number" placeholder="Кількість" min="0" />
+<button onclick="addProduct()">Додати</button>
+<span id="add-msg"></span>
+ 
+<h2>4. Пошук за назвою</h2>
+<input id="search-input" type="text" placeholder="Введіть назву або частину назви" />
+<button onclick="searchProduct()">Шукати</button>
+<div id="search-result"></div>
+ 
+<h2>Каталог продуктів</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th><th>Назва</th><th>Ціна (грн)</th><th>Кількість</th><th>Дії</th>
+    </tr>
+  </thead>
+  <tbody id="catalog-body"></tbody>
+</table>
+ 
+<h2>3. Оновити продукт</h2>
+<input id="upd-id"    type="number" placeholder="ID продукту" />
+<input id="upd-price" type="number" placeholder="Нова ціна (грн)" />
+<input id="upd-qty"   type="number" placeholder="Нова кількість" />
+<button onclick="updateProduct()">Оновити</button>
+<span id="upd-msg"></span>
+ 
+<h2>2. Видалити продукт</h2>
+<input id="del-id" type="number" placeholder="ID продукту" />
+<button onclick="deleteProduct()">Видалити</button>
+<span id="del-msg"></span>
+ 
+<h2>5. Оформити замовлення</h2>
+<input id="order-id"  type="number" placeholder="ID продукту" />
+<input id="order-qty" type="number" placeholder="Кількість" min="1" value="1"/>
+<button onclick="placeOrder()">Замовити</button>
+<span id="order-msg"></span>
+ 
+<h3>Список замовлень (Set)</h3>
+<table>
+  <thead><tr><th>#</th><th>Продукт</th><th>К-сть</th><th>Сума (грн)</th></tr></thead>
+  <tbody id="orders-body"></tbody>
+</table>
+ 
+<h2>6. Історія змін продукту (WeakMap)</h2>
+<input id="hist-id" type="number" placeholder="ID продукту" />
+<button onclick="showHistory()">Показати</button>
+<ul id="history-list"></ul>
+ 
+<script src="Task_4.js"></script>
+</body>
+</html>
+ 
