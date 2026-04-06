@@ -1,7 +1,3 @@
-// products.js — Завдання 1: Список товарів
-
-// ===== PURE FUNCTIONS =====
-
 function createProduct(name, price, category, img) {
   return {
     id: 'p_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
@@ -56,8 +52,6 @@ function formatPrice(price) {
   return parseFloat(price).toFixed(2) + ' \u20B4';
 }
 
-// ===== STATE =====
-
 var state = {
   products: [
     createProduct('Навушники Sony', 2999, 'Електроніка', 'https://picsum.photos/seed/sony/400/300'),
@@ -71,8 +65,6 @@ var state = {
   editingId: null,
 };
 
-// ===== TOAST =====
-
 function showToast(message, type) {
   var container = document.getElementById('toast-container');
   var toast = document.createElement('div');
@@ -83,8 +75,6 @@ function showToast(message, type) {
     toast.remove();
   }, 3000);
 }
-
-// ===== MODAL =====
 
 function openModal(title, product) {
   document.getElementById('modal-title').textContent = title;
@@ -100,8 +90,6 @@ function closeModal() {
   document.getElementById('product-form').reset();
   state.editingId = null;
 }
-
-// ===== RENDER =====
 
 function buildProductCard(product) {
   var card = document.createElement('article');
@@ -164,8 +152,6 @@ function renderPage() {
     grid.appendChild(buildProductCard(product));
   });
 }
-
-// ===== EVENTS =====
 
 document.getElementById('btn-add').addEventListener('click', function() {
   state.editingId = null;

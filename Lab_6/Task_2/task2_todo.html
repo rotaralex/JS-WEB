@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список завдань</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+
+<header>
+  <h1>✔ Список завдань</h1>
+  <div id="stats"></div>
+</header>
+
+<div class="wrapper">
+
+  <form class="add-form" id="add-form" novalidate>
+    <input type="text" id="new-task" placeholder="Введіть нове завдання..." required minlength="2" maxlength="200" autocomplete="off">
+    <button type="submit">Додати</button>
+  </form>
+
+  <div class="sort-bar">
+    <span>Сортування:</span>
+    <button class="sort-btn" data-sort="created">За датою</button>
+    <button class="sort-btn" data-sort="status">За статусом</button>
+    <button class="sort-btn" data-sort="updated">За оновленням</button>
+    <button id="btn-reset-sort">Скинути</button>
+  </div>
+
+  <ul id="todo-list"></ul>
+
+</div>
+
+<script src="todo.js"></script>
+</body>
+</html>
